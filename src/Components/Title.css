@@ -12,7 +12,7 @@
 .title-box {
     background-color: #8098b2;
     border: solid #8098b2;
-    margin: 10px 0px 0px 0px;
+    margin: 10px 0 0 0;
     height: 100px;
     display: flex;
     justify-content: center;

@@ -14,7 +14,9 @@ export default function CharacterCard({singleCharacterToPutOnCard}: characterCar
             <div><p>{singleCharacterToPutOnCard.name}</p></div>
         </div>
 
-        <div className={"image"}><img src={singleCharacterToPutOnCard.image}/></div>
+        <div className={"image"}><img src={singleCharacterToPutOnCard.image}
+        alt={"This image shows a Rick-and-Morty-character."}/>
+        </div>
         <div className={"origin"}>{singleCharacterToPutOnCard.origin.name}</div>
     </div>
 
