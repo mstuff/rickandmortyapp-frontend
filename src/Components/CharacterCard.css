@@ -1,0 +1,56 @@
+
+.character-card{
+    background-color: #8098b2;
+    margin: 4% 1.5%  0.5% 1.5%;
+
+    border: solid #8098b2;
+    border-radius: 5pt;
+
+    height: 440px;
+    width: 380px;
+
+    box-shadow: 5px 5px 10px #282c34;
+
+
+}
+
+
+.id-and-name{
+    color: #282c34;
+    font-family: "Courier New", 'DINPro-Medium', serif;
+    font-size: x-large;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.image > img {
+    max-width: 300px;
+    max-height: 300px;
+    border: solid #282c34;
+    border-radius: 150pt;
+
+
+}
+
+.image{
+    margin: 5px 15px 20px 15px;
+
+}
+
+.origin{
+    color: #282c34;
+    font-size: larger;
+    font-weight: bolder;
+    font-family: "Courier New", 'DINPro-Medium', serif;
+
+    display: flex;
+    justify-content: center;
+    margin: 10px 15px 20px 15px;
+
+}
+
+/* background-color: #97cacc;*/

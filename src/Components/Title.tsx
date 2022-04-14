@@ -1,4 +1,5 @@
+import "./Title.css"
 
 export default function Title() {
-    return <h1 className={"blog-title"}>Rick & Morty Character Gallery</h1>
+    return <div className={"title-box"}>  <h1 className={"blog-title"}>Rick & Morty Character Gallery</h1> </div>
 }

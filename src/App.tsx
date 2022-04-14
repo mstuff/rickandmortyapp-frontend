@@ -639,7 +639,7 @@ const charactersApiPage1 = [
             "name": "unknown",
             "url": ""
         },
-        "image": "https://rickandmortyapi.com/api/character/avatar/19.jpeg",
+        "image": "https://cdn.pixabay.com/photo/2019/10/24/19/48/dinosaur-4575110_1280.png",
         "episode": [
             "https://rickandmortyapi.com/api/episode/10"
         ],
@@ -1132,6 +1132,8 @@ const charactersApiPage1 = [
     }
 ]
 
+/*https://rickandmortyapi.com/api/character/avatar/19.jpeg
+* https://c.neh.tw/thumb/f/720/comdlpng6967371.jpg*/
 
 export default function App() {
   return (

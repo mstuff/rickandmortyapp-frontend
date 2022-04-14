@@ -1,19 +1,21 @@
-
-
 import {Character} from "../Model/Character";
+import "./CharacterCard.css"
 
-type characterCardProps ={
+
+type characterCardProps = {
     singleCharacterToPutOnCard: Character;
 }
 
 
+export default function CharacterCard({singleCharacterToPutOnCard}: characterCardProps) {
+    return <div className={"character-card"}>
 
-export default function CharacterCard({singleCharacterToPutOnCard} :characterCardProps){
-    return<div>
-        <div>{singleCharacterToPutOnCard.name}</div>
-        <div>{singleCharacterToPutOnCard.id}</div>
-        <div><img src={singleCharacterToPutOnCard.image}/></div>
-        <div>{singleCharacterToPutOnCard.origin.name}</div>
+        <div className={"id-and-name"}>
+            <div><p>{singleCharacterToPutOnCard.name}</p></div>
+        </div>
+
+        <div className={"image"}><img src={singleCharacterToPutOnCard.image}/></div>
+        <div className={"origin"}>{singleCharacterToPutOnCard.origin.name}</div>
     </div>
 
 }
