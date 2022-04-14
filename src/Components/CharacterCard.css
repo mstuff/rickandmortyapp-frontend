@@ -16,14 +16,18 @@
     flex-direction: row;
     justify-content: center;
 
+
 }
 
 .character-header div:last-child{
     margin-left: 1%;
 }
 
-.character-image{
+.character-image img{
     /*border: solid red;*/
+    max-width: 300px;
+    max-height: 300px;
+
 
 
 

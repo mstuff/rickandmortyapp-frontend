@@ -165,7 +165,7 @@ const characters = [
             "name": "Earth (Replacement Dimension)",
             "url": "https://rickandmortyapi.com/api/location/20"
         },
-        "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+        "image": "https://c.neh.tw/thumb/f/720/comdlpng6967371.jpg",
         "episode": [
             "https://rickandmortyapi.com/api/episode/6",
             "https://rickandmortyapi.com/api/episode/7",
