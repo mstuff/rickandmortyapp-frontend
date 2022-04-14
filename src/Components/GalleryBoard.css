@@ -1,0 +1,19 @@
+.gallery-board{
+    /*border: 10px solid deeppink;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*align-content: space-evenly;*/
+    /*column-gap: 20px;*/
+    /*row-gap: 20px;*/
+
+}
+.board-character{
+    background-color: black;
+    margin: 10px;
+    padding: 10px;
+
+
+
+}
