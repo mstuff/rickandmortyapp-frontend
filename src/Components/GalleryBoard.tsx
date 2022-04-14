@@ -1,20 +1,18 @@
+
+
 import {Character} from "../Model/Character";
 import CharacterCard from "./CharacterCard";
 
 type GalleryBoardProps = {
-    characters : Character[]
+    charactersToDisplayOnGalleryBoard : Character[];
+}
+
+export default function GalleryBoard({charactersToDisplayOnGalleryBoard}: GalleryBoardProps){
+    return <div>{charactersToDisplayOnGalleryBoard.map(eachCharacterFromArray => <CharacterCard singleCharacterToPutOnCard={eachCharacterFromArray} />)}</div>
 
 }
 
-export default function GalleryBoard({characters}: GalleryBoardProps){
-    return <div>{characters.map(characters => <CharacterCard character={characters} />)}</div>
 
-}
-
-// export default function GalleryBoard(){
-//     return <div><CharacterCard /></div>
-//
-// }
 
 //-Erstellung GalleryBoard
 //-Soll CharactersCards darstellen

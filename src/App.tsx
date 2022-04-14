@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import Title from "./Components/Title";
 import GalleryBoard from "./Components/GalleryBoard";
 
 
-const characters = [
+const charactersApiPage1 = [
     {
         "id": 1,
         "name": "Rick Sanchez",
@@ -1137,11 +1137,11 @@ export default function App() {
   return (
     <div className="App">
       <Title />
-        <GalleryBoard characters={characters}/>
+        <GalleryBoard charactersToDisplayOnGalleryBoard={charactersApiPage1}/>
 
     </div>
   );
 }
 
-/*<GalleryBoard character={characters}/>*/
+
 
