@@ -19,7 +19,6 @@ export default function GalleryBoard({charactersToDisplayOnGalleryBoard}: Galler
 
     const startSearchOnClick = () => {
         setFilter(text)
-
     }
 
     return <div>
