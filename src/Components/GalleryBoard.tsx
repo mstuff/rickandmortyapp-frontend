@@ -1,7 +1,7 @@
 import {Character} from "../Model/Character";
 import CharacterCard from "./CharacterCard";
 import './GalleryBoard.css'
-import {ChangeEvent, useState} from "react";
+import {ChangeEvent, KeyboardEventHandler, useState} from "react";
 
 type GalleryBoardProps = {
     characters : Character[]
@@ -9,22 +9,38 @@ type GalleryBoardProps = {
 
 export default function GalleryBoard({characters}: GalleryBoardProps){
 
-    const [charactersNew, setCharactersNew] = useState<string>("")
+    const [filteredCharacters, setFilteredCharacters] = useState<string>("")
     const [text, setText] = useState<string>("")
 
-    const onFilterChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const filterByText = (event: ChangeEvent<HTMLInputElement>) => {
         setText(event.target.value)
     }
 
     const onFilterClick = () =>{
-        setCharactersNew(text)
+        setFilteredCharacters(text)
     }
 
+    const onClickReset= () =>{
+        setFilteredCharacters("")
+    }
+
+    const onFilterChange =(event: any) => {
+        if (event.key === 'Enter')
+        setFilteredCharacters(event.target.value)
+    }
 
     return <div>
-        <input onChange={onFilterChange}/>
+        <input onChange={filterByText}/>
         <button onClick={onFilterClick}>Click me!</button>
-        <div className={"gallery-board"}>{characters.filter(characters => characters.name.toLowerCase().includes(charactersNew.toLowerCase()) || characters.species.toLowerCase().includes(charactersNew.toLowerCase()) ).map(characters => <div className={"board-character"}><CharacterCard character={characters} /></div>)}</div>
+        <button onClick={onClickReset}>RESET</button>
+        <input onKeyPress={onFilterChange}/>
+        <div className={"gallery-board"}>
+            {characters.filter(characters => characters.name.toLowerCase().includes(filteredCharacters.toLowerCase()) || characters.species.toLowerCase().includes(filteredCharacters.toLowerCase()) )
+                .map(characters =>
+                    <div className={"board-character"}>
+                        <CharacterCard character={characters} />
+                    </div>)}
+        </div>
         </div>
 }
 
