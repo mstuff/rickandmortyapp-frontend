@@ -9,46 +9,57 @@ type GalleryBoardProps = {
 
 export default function GalleryBoard({characters}: GalleryBoardProps){
 
-    const [filteredCharacters, setFilteredCharacters] = useState<string>("")
+    const [filteredCharacterName, setFilteredCharacterName] = useState<string>("")
     const [text, setText] = useState<string>("")
 
+
     const filterByText = (event: ChangeEvent<HTMLInputElement>) => {
+        console.log(event)
         setText(event.target.value)
     }
 
     const onFilterClick = () =>{
-        setFilteredCharacters(text)
+        setFilteredCharacterName(text)
     }
 
     const onClickReset= () =>{
-        setFilteredCharacters("")
+        setFilteredCharacterName("")
     }
 
-    const onFilterChange =(event: any) => {
+
+    const onFilterChange = (event: any)=> {
+        console.log(event)
         if (event.key === 'Enter')
-        setFilteredCharacters(event.target.value)
+            setFilteredCharacterName(event.target.value)
     }
+
+
+
+    const filteredCharacters = characters.filter(characters => characters.name.toLowerCase().includes(filteredCharacterName.toLowerCase()))
+
+
 
     return <div>
         <input onChange={filterByText}/>
         <button onClick={onFilterClick}>Click me!</button>
         <button onClick={onClickReset}>RESET</button>
         <input onKeyPress={onFilterChange}/>
+
         <div className={"gallery-board"}>
-            {characters.filter(characters => characters.name.toLowerCase().includes(filteredCharacters.toLowerCase()) || characters.species.toLowerCase().includes(filteredCharacters.toLowerCase()) )
-                .map(characters =>
-                    <div className={"board-character"}>
-                        <CharacterCard character={characters} />
-                    </div>)}
+            {filteredCharacters.length
+            ? filteredCharacters.map(characters =>
+            <div className={"board-character"}>
+                <CharacterCard character={characters} />
+            </div>)
+                :<h1>Character not Found</h1>}
         </div>
+
         </div>
 }
 
-// export default function GalleryBoard(){
-//     return <div><CharacterCard /></div>
-//
-// }
 
-//-Erstellung GalleryBoard
-//-Soll CharactersCards darstellen
-//-Bekommt Liste mit Character
+// {characters.filter(characters => characters.name.toLowerCase().includes(filteredCharacterName.toLowerCase()) || characters.species.toLowerCase().includes(filteredCharacterName.toLowerCase()) )
+//     .map(characters =>
+//         <div className={"board-character"}>
+//             <CharacterCard character={characters} />
+//         </div>)}

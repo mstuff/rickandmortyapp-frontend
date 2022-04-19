@@ -1,5 +1,5 @@
 .title{
-
+     background-color: #484444;
      color: white;
      display: flex;
      flex-direction: row;
@@ -19,6 +19,7 @@
 }
 
 .title div{
+
      color: black;
      font-size: 30px;
      font-weight: bolder;
