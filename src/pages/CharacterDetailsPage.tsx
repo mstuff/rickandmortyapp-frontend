@@ -1,5 +1,6 @@
 import {useParams} from "react-router-dom";
 import {Character} from "../Model/Character";
+import "./CharacterDetailsPage.css"
 
 type characterDetailsProps = {
     charactersForDisplay: Character [];
@@ -10,7 +11,7 @@ export default function CharacterDetailsPage({charactersForDisplay}: characterDe
     const params = useParams();
     const id: number = Number(params.id);
 
-    return <div>
+    return <div className={"one-character-details"}>
         <div> {charactersForDisplay[id - 1].name} </div>
 
         <div className={"image"}><img src={charactersForDisplay[id - 1].image}
