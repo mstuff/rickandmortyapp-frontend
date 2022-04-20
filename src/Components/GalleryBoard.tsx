@@ -21,6 +21,11 @@ export default function GalleryBoard({charactersToDisplayOnGalleryBoard}: Galler
         setFilter(text);
     }
 
+    const filteredCharacters : Character[] = charactersToDisplayOnGalleryBoard
+            .filter(element => element.name.toLowerCase().includes(filter.toLowerCase())
+                || element.origin.name.toLowerCase().includes(filter.toLowerCase())
+                || element.species.toLowerCase().includes(filter.toLowerCase()))
+
 
     return <div>
         <div>
@@ -28,11 +33,11 @@ export default function GalleryBoard({charactersToDisplayOnGalleryBoard}: Galler
             <button onClick={startSearchOnClick}> Start search! </button>
 
         </div>
-        <div className={"gallery-board"}>{charactersToDisplayOnGalleryBoard
-            .filter(element => element.name.toLowerCase().includes(filter.toLowerCase())
-                || element.origin.name.toLowerCase().includes(filter.toLowerCase())
-                || element.species.toLowerCase().includes(filter.toLowerCase()))
-            .map(eachCharacterFromArray => <CharacterCard singleCharacterToPutOnCard={eachCharacterFromArray}/>)}
+        <div className={"gallery-board"}>
+            {filteredCharacters.length
+            ? filteredCharacters.map(eachCharacterFromArray =>
+                    <CharacterCard singleCharacterToPutOnCard={eachCharacterFromArray}/>)
+            : <h1> Search has no result! </h1>}
         </div>
     </div>
 
