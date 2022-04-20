@@ -28,7 +28,7 @@ export default function GalleryBoard({charactersToDisplayOnGalleryBoard}: Galler
 
 
     return <div>
-        <div>
+        <div className={"search-field-and-button"}>
             <input placeholder={"wat willste?"} value={text} onChange={onTextChange}/>
             <button onClick={startSearchOnClick}> Start search! </button>
 
