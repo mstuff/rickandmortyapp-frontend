@@ -1,5 +1,6 @@
 import {Character} from "../Model/Character";
 import "./CharacterCard.css"
+import {useNavigate} from "react-router-dom";
 
 
 type characterCardProps = {
@@ -8,7 +9,13 @@ type characterCardProps = {
 
 
 export default function CharacterCard({singleCharacterToPutOnCard}: characterCardProps) {
-    return <div className={"character-card"}>
+
+    const navigate = useNavigate();
+    const onCardClick = () => {
+        navigate(`/character/${singleCharacterToPutOnCard.id}`);
+    }
+
+    return <div className={"character-card"} onClick={onCardClick}>
 
         <div className={"id-and-name"}>
             <div><p>{singleCharacterToPutOnCard.name}</p></div>
