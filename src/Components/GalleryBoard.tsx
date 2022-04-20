@@ -22,8 +22,6 @@ export default function GalleryBoard({charactersToDisplayOnGalleryBoard}: Galler
     }
 
 
-
-
     return <div>
         <div>
             <input placeholder={"wat willste?"} value={text} onChange={onTextChange}/>
