@@ -1,16 +1,10 @@
-
+import axios from "axios";
 
 
 export default function RickMortyApi (){
 
-   return    fetch("https://rickandmortyapi.com/api/character")
-            .then(response => {
-                if (response.ok) {
-                    return response.json()
-                } else {
-                    throw new Error("Network request error")
-                }
-            })
+   return    axios.get("https://rickandmortyapi.com/api/characte")
+            .then(response => response.data)
             .catch(error => console.error(error));
 
 }
