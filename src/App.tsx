@@ -8,16 +8,13 @@ import HomePage from "./pages/HomePage";
 import GalleryPage from "./pages/GalleryPage";
 import CharacterDetailsPage from "./pages/CharacterDetailsPage";
 import fetchCharactersApiPage1 from "./service/RickMortyApi";
+import useCharacters from "./hooks/useCharacters";
 
 export default function App() {
 
-    const [fetchedCharactersPage1, setFetchedCharactersPage1] = useState<Character[]>([]);
+    const fetchedCharactersPage1 : Character [] = useCharacters();
 
-    useEffect(() => {
-        fetchCharactersApiPage1()
-            .then(body => setFetchedCharactersPage1(body.results))
 
-    }, []);
 
 
     return (
