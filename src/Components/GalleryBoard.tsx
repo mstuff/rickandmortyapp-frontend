@@ -3,6 +3,7 @@ import CharacterCard from "./CharacterCard";
 import "./GalleryBoard.css"
 import {ChangeEvent, useState} from "react";
 
+
 type GalleryBoardProps = {
     charactersToDisplayOnGalleryBoard: Character[];
 }
@@ -17,14 +18,16 @@ export default function GalleryBoard({charactersToDisplayOnGalleryBoard}: Galler
         setText(event.target.value);
     }
 
+
     const startSearchOnClick = () => {
         setFilter(text);
     }
 
     const filteredCharacters : Character[] = charactersToDisplayOnGalleryBoard
-            .filter(element => element.name.toLowerCase().includes(filter.toLowerCase())
-                || element.origin.name.toLowerCase().includes(filter.toLowerCase())
-                || element.species.toLowerCase().includes(filter.toLowerCase()))
+        .filter(element => element.name.toLowerCase().includes(filter.toLowerCase())
+            || element.origin.name.toLowerCase().includes(filter.toLowerCase())
+            || element.species.toLowerCase().includes(filter.toLowerCase()))
+
 
 
     return <div>
@@ -33,6 +36,8 @@ export default function GalleryBoard({charactersToDisplayOnGalleryBoard}: Galler
             <button onClick={startSearchOnClick}> Start search! </button>
 
         </div>
+
+
         <div className={"gallery-board"}>
             {filteredCharacters.length
             ? filteredCharacters.map(eachCharacterFromArray =>
