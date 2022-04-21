@@ -5,6 +5,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+}
 
-
+.search-field-and-button{
+    margin: 3%;
 }
